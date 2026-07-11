@@ -117,20 +117,6 @@ if err := os.WriteFile(filePath, resp.Bytes(), 0o600); err != nil {
 }
 
 return nil
-	
-	if err != nil {
-		return err
-	}
-
-	if resp.IsError() {
-		return fmt.Errorf(
-			"unexpected status %d from %s",
-			resp.StatusCode(),
-			rawURL,
-		)
-	}
-
-	return nil
 }
 
 func loadCookieCache() error {
